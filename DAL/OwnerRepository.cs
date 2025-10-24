@@ -4,20 +4,20 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entity;
+using WinFormsDemo.Models;
 
-namespace DAL
+namespace WinFormsDemo.DAL
 {
-    public class DALayer
+    public class OwnerRepository
     {
         public List<Owner> FindOwners(string name)
         {
-            using (OwnerDbContext context = new OwnerDbContext())
+            using (DemoDbContext context = new DemoDbContext())
                 return context.Owners.Where(o => o.Name.Contains(name)).ToList();
         }
         public bool Add(Owner owner)
         {
-            using (OwnerDbContext context = new OwnerDbContext())
+            using (DemoDbContext context = new DemoDbContext())
             {
                 context.Owners.Add(owner);
                 int count = context.SaveChanges();
@@ -26,12 +26,12 @@ namespace DAL
         }
         public Owner GetOwnerById(int id)
         {
-            using (OwnerDbContext context = new OwnerDbContext())
+            using (DemoDbContext context = new DemoDbContext())
                 return context.Owners.Find(id);
         }
         public bool Edit(Owner newOwner)
         {
-            using (OwnerDbContext context = new OwnerDbContext())
+            using (DemoDbContext context = new DemoDbContext())
             {
                 Owner owner = context.Owners.Find(newOwner.Id);
 
@@ -57,7 +57,7 @@ namespace DAL
         }
         public bool Delete(int id)
         {
-            using (OwnerDbContext context = new OwnerDbContext())
+            using (DemoDbContext context = new DemoDbContext())
             {
                 Owner owner = context.Owners.Find(id);
                 context.Owners.Remove(owner);

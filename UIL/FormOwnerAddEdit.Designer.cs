@@ -1,4 +1,4 @@
-﻿namespace UIL
+﻿namespace WinFormsDemo.UIL
 {
     partial class FormOwnerAddEdit
     {

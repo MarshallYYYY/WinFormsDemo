@@ -1,5 +1,5 @@
-﻿using DAL;
-using Entity;
+﻿using WinFormsDemo.DAL;
+using WinFormsDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,22 +8,22 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace WinFormsDemo.BLL
 {
-    public class BLLayer
+    public class OwnerService
     {
-        private readonly DALayer dal;
-        public BLLayer()
+        private readonly OwnerRepository ownerRespository;
+        public OwnerService()
         {
-            dal = new DALayer();
+            ownerRespository = new OwnerRepository();
         }
         public List<Owner> FindOwners(string name)
         {
-            return dal.FindOwners(name);
+            return ownerRespository.FindOwners(name);
         }
         public Owner GetOwnerById(int id)
         {
-            return dal.GetOwnerById(id);
+            return ownerRespository.GetOwnerById(id);
         }
         private (string info, bool isSuccess) RegularData(Owner owner)
         {
@@ -58,7 +58,7 @@ namespace BLL
             bool isSuccess;
             if (isSuccessRegular)
             {
-                isSuccess = dal.Add(owner);
+                isSuccess = ownerRespository.Add(owner);
                 if (isSuccess)
                     info = "添加成功！";
                 else
@@ -73,7 +73,7 @@ namespace BLL
             bool isSuccess;
             if (isSuccessRegular)
             {
-                isSuccess = dal.Edit(newOwner);
+                isSuccess = ownerRespository.Edit(newOwner);
                 if (isSuccess)
                     info = "修改成功！";
                 else
@@ -84,7 +84,7 @@ namespace BLL
         }
         public bool Delete(int id)
         {
-            return dal.Delete(id);
+            return ownerRespository.Delete(id);
         }
     }
 }

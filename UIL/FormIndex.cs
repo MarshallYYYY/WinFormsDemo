@@ -1,5 +1,5 @@
-﻿using BLL;
-using Entity;
+﻿using WinFormsDemo.BLL;
+using WinFormsDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,16 +12,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UIL
+namespace WinFormsDemo.UIL
 {
     public partial class FormIndex : Form
     {
-        private readonly BLLayer bll;
+        private readonly OwnerService ownerService;
         public FormIndex()
         {
             InitializeComponent();
 
-            bll = new BLLayer();
+            ownerService = new OwnerService();
         }
 
         private void FormIndex_Load(object sender, EventArgs e)
@@ -39,7 +39,8 @@ namespace UIL
         }
         public void FindOwners()
         {
-            dgv.DataSource = bll.FindOwners(txt.Text);
+            dgv.DataSource = ownerService.FindOwners(txt.Text);
+            // 为第一列（编号列）排序
             for (int i = 0; i < dgv.Rows.Count; i++)
                 dgv.Rows[i].Cells["colNum"].Value = (i + 1).ToString();
         }
@@ -76,7 +77,7 @@ namespace UIL
                 MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                if (bll.Delete(id))
+                if (ownerService.Delete(id))
                 {
                     MessageBox.Show("删除成功！");
                     FindOwners();

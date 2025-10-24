@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Entity
+namespace WinFormsDemo.Models
 {
     [Table("Owner")]
     public class Owner

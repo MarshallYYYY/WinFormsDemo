@@ -1,4 +1,4 @@
-﻿namespace UIL
+﻿namespace WinFormsDemo.UIL
 {
     partial class FormIndex
     {
@@ -30,15 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt = new System.Windows.Forms.TextBox();
-            this.btnFind = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.colNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,20 +40,27 @@
             this.colBuildingNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnitNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRoomNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txt = new System.Windows.Forms.TextBox();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 36F);
-            this.label1.Location = new System.Drawing.Point(318, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 48);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "业主信息列表";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("宋体", 36F);
+            this.lblTitle.Location = new System.Drawing.Point(318, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(308, 48);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "业主信息列表";
             // 
             // dgv
             // 
@@ -73,6 +73,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
@@ -106,18 +107,82 @@
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(944, 398);
+            this.dgv.Size = new System.Drawing.Size(944, 364);
             this.dgv.TabIndex = 1;
             // 
-            // label2
+            // colNum
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 18F);
-            this.label2.Location = new System.Drawing.Point(12, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "姓名：";
+            this.colNum.HeaderText = "序号";
+            this.colNum.Name = "colNum";
+            this.colNum.ReadOnly = true;
+            // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.FillWeight = 99.78246F;
+            this.colId.HeaderText = "编号";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colName
+            // 
+            this.colName.DataPropertyName = "Name";
+            this.colName.FillWeight = 99.78246F;
+            this.colName.HeaderText = "姓名";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            // 
+            // colSex
+            // 
+            this.colSex.DataPropertyName = "Sex";
+            this.colSex.FillWeight = 99.78246F;
+            this.colSex.HeaderText = "性别";
+            this.colSex.Name = "colSex";
+            this.colSex.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            this.colPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colPhone.DataPropertyName = "Phone";
+            this.colPhone.FillWeight = 101.5229F;
+            this.colPhone.HeaderText = "手机号";
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            this.colPhone.Width = 110;
+            // 
+            // colBuildingNum
+            // 
+            this.colBuildingNum.DataPropertyName = "BuildingNum";
+            this.colBuildingNum.FillWeight = 99.78246F;
+            this.colBuildingNum.HeaderText = "楼号";
+            this.colBuildingNum.Name = "colBuildingNum";
+            this.colBuildingNum.ReadOnly = true;
+            // 
+            // colUnitNum
+            // 
+            this.colUnitNum.DataPropertyName = "UnitNum";
+            this.colUnitNum.FillWeight = 99.78246F;
+            this.colUnitNum.HeaderText = "单元号";
+            this.colUnitNum.Name = "colUnitNum";
+            this.colUnitNum.ReadOnly = true;
+            // 
+            // colRoomNum
+            // 
+            this.colRoomNum.DataPropertyName = "RoomNum";
+            this.colRoomNum.FillWeight = 99.78246F;
+            this.colRoomNum.HeaderText = "房间号";
+            this.colRoomNum.Name = "colRoomNum";
+            this.colRoomNum.ReadOnly = true;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("宋体", 18F);
+            this.lblName.Location = new System.Drawing.Point(12, 65);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(82, 24);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "姓名：";
             // 
             // txt
             // 
@@ -191,86 +256,33 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
-            // colNum
+            // label3
             // 
-            this.colNum.HeaderText = "序号";
-            this.colNum.Name = "colNum";
-            this.colNum.ReadOnly = true;
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.FillWeight = 99.78246F;
-            this.colId.HeaderText = "编号";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colName
-            // 
-            this.colName.DataPropertyName = "Name";
-            this.colName.FillWeight = 99.78246F;
-            this.colName.HeaderText = "姓名";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            // 
-            // colSex
-            // 
-            this.colSex.DataPropertyName = "Sex";
-            this.colSex.FillWeight = 99.78246F;
-            this.colSex.HeaderText = "性别";
-            this.colSex.Name = "colSex";
-            this.colSex.ReadOnly = true;
-            // 
-            // colPhone
-            // 
-            this.colPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.colPhone.DataPropertyName = "Phone";
-            this.colPhone.FillWeight = 101.5229F;
-            this.colPhone.HeaderText = "手机号";
-            this.colPhone.Name = "colPhone";
-            this.colPhone.ReadOnly = true;
-            this.colPhone.Width = 110;
-            // 
-            // colBuildingNum
-            // 
-            this.colBuildingNum.DataPropertyName = "BuildingNum";
-            this.colBuildingNum.FillWeight = 99.78246F;
-            this.colBuildingNum.HeaderText = "楼号";
-            this.colBuildingNum.Name = "colBuildingNum";
-            this.colBuildingNum.ReadOnly = true;
-            // 
-            // colUnitNum
-            // 
-            this.colUnitNum.DataPropertyName = "UnitNum";
-            this.colUnitNum.FillWeight = 99.78246F;
-            this.colUnitNum.HeaderText = "单元号";
-            this.colUnitNum.Name = "colUnitNum";
-            this.colUnitNum.ReadOnly = true;
-            // 
-            // colRoomNum
-            // 
-            this.colRoomNum.DataPropertyName = "RoomNum";
-            this.colRoomNum.FillWeight = 99.78246F;
-            this.colRoomNum.HeaderText = "房间号";
-            this.colRoomNum.Name = "colRoomNum";
-            this.colRoomNum.ReadOnly = true;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 18F);
+            this.label3.Location = new System.Drawing.Point(353, 472);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(238, 24);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Ower Manager System";
             // 
             // FormIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 501);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.txt);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.dgv);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
             this.Name = "FormIndex";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "主页";
@@ -283,9 +295,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnReset;
@@ -300,6 +312,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colBuildingNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colUnitNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRoomNum;
+        private System.Windows.Forms.Label label3;
     }
 }
 

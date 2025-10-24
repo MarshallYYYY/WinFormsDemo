@@ -1,5 +1,5 @@
-﻿using BLL;
-using Entity;
+﻿using WinFormsDemo.BLL;
+using WinFormsDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,17 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UIL
+namespace WinFormsDemo.UIL
 {
     public partial class FormOwnerAddEdit : Form
     {
-        private readonly BLLayer bll;
+        private readonly OwnerService bll;
         private readonly FormIndex formIndex;
         private readonly int id;
         public FormOwnerAddEdit(FormIndex form, string title, int id = -1)
         {
             InitializeComponent();
-            bll = new BLLayer();
+            bll = new OwnerService();
 
             formIndex = form;
             lblTitle.Text = title;
