@@ -33,7 +33,6 @@ namespace WinFormsDemo.DAL
         {
             using (DemoDbContext context = new DemoDbContext())
             {
-                Owner owner = context.Owners.Find(newOwner.Id);
 
                 // 方案一：把属性挨个赋值
                 //owner.Name = newOwner.Name;
@@ -44,9 +43,12 @@ namespace WinFormsDemo.DAL
                 //owner.RoomNum = newOwner.RoomNum;
                 // ...
 
-                // 方案二：
-                //context.Entry(owner).State = EntityState.Modified;
-                context.Entry(owner).CurrentValues.SetValues(newOwner);
+                // 方案二：一开始用的方案
+                //Owner owner = context.Owners.Find(newOwner.Id);
+                //context.Entry(owner).CurrentValues.SetValues(newOwner);
+
+                // 方案三：最简洁
+                context.Entry(newOwner).State = EntityState.Modified;
 
                 // 可选：排除某些字段不被更新
                 // context.Entry(owner).Property(x => x.Id).IsModified = false;
