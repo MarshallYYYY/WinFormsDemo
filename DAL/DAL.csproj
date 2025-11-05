@@ -8,8 +8,8 @@
     <ProjectGuid>{F7DE3FB4-844A-4E38-BE4E-82550209199E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFormsDemo.DAL</RootNamespace>
-    <AssemblyName>WinFormsDemo.DAL</AssemblyName>
+    <RootNamespace>WinFormsOIMS.DAL</RootNamespace>
+    <AssemblyName>WinFormsOIMS.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

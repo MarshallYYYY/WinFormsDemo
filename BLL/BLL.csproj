@@ -7,8 +7,8 @@
     <ProjectGuid>{8F41325B-EE47-4A9F-B8B5-058D7F8B46CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFormsDemo.BLL</RootNamespace>
-    <AssemblyName>WinFormsDemo.BLL</AssemblyName>
+    <RootNamespace>WinFormsOIMS.BLL</RootNamespace>
+    <AssemblyName>WinFormsOIMS.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

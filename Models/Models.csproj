@@ -7,8 +7,8 @@
     <ProjectGuid>{C77CE378-7D57-49CE-9428-F21E7ED817B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinFormsDemo.Models</RootNamespace>
-    <AssemblyName>WinFormsDemo.Models</AssemblyName>
+    <RootNamespace>WinFormsOIMS.Models</RootNamespace>
+    <AssemblyName>WinFormsOIMS.Models</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
